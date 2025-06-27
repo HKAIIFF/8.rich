@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8.rich - 氣運之地探索平台</title>
+    <title>1234567.world - 氣運之地探索平台</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;600;700&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #d4af37;
@@ -15,6 +15,10 @@
             --mystic: #4a148c;
             --earth: #8d6e63;
             --fortune: #00bcd4;
+            --digital-gold: #ffd700;
+            --meta-purple: #6a0dad;
+            --neon-blue: #00d4ff;
+            --electric-purple: #8a2be2;
         }
         
         body {
@@ -23,111 +27,218 @@
             color: #ffffff;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(139, 0, 0, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 50% 50%, rgba(74, 20, 140, 0.05) 0%, transparent 30%);
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.15) 0%, transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(0, 212, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(138, 43, 226, 0.08) 0%, transparent 35%);
         }
         
+        /* 优化后的Logo样式 */
         .logo-font {
-            font-family: 'Ma Shan Zheng', cursive;
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--mystic));
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem; /* 减小尺寸 */
+            font-weight: 900;
+            letter-spacing: 2px; /* 减小间距 */
+            background: linear-gradient(45deg, 
+                #ffd700 0%, 
+                #00d4ff 25%, 
+                #8a2be2 50%, 
+                #ffd700 75%, 
+                #00d4ff 100%);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             position: relative;
             display: inline-block;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-            animation: logoGlow 3s ease-in-out infinite alternate;
+            text-shadow: 
+                0 0 15px rgba(255, 215, 0, 0.8),
+                0 0 30px rgba(0, 212, 255, 0.6),
+                0 0 45px rgba(138, 43, 226, 0.4);
+            animation: logoGlow 3s ease-in-out infinite alternate,
+                       gradientShift 8s ease-in-out infinite;
+            transform: perspective(500px) rotateY(-5deg);
         }
         
         @keyframes logoGlow {
-            0% { text-shadow: 0 0 10px rgba(212, 175, 55, 0.3); }
-            100% { text-shadow: 0 0 25px rgba(212, 175, 55, 0.6), 0 0 35px rgba(255, 107, 53, 0.4); }
+            0% { 
+                text-shadow: 
+                    0 0 10px rgba(255, 215, 0, 0.6),
+                    0 0 20px rgba(0, 212, 255, 0.4),
+                    0 0 30px rgba(138, 43, 226, 0.3);
+                transform: perspective(500px) rotateY(-5deg) scale(1);
+            }
+            100% { 
+                text-shadow: 
+                    0 0 20px rgba(255, 215, 0, 1),
+                    0 0 40px rgba(0, 212, 255, 0.8),
+                    0 0 60px rgba(138, 43, 226, 0.6);
+                transform: perspective(500px) rotateY(5deg) scale(1.05);
+            }
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .logo-font::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #ffd700, #00d4ff, #8a2be2);
+            border-radius: 6px;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(8px);
+            animation: haloGlow 4s ease-in-out infinite alternate;
+        }
+        
+        @keyframes haloGlow {
+            0% { opacity: 0.2; transform: scale(0.95); }
+            100% { opacity: 0.5; transform: scale(1.1); }
         }
         
         .logo-sub {
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            color: var(--accent);
-            margin-top: -5px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            color: var(--neon-blue);
+            margin-top: -6px;
             text-align: center;
-            opacity: 0.9;
+            opacity: 0.95;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+            animation: textPulse 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textPulse {
+            0% { opacity: 0.8; }
+            100% { opacity: 1; text-shadow: 0 0 15px rgba(0, 212, 255, 1); }
+        }
+        
+        .meta-tech-badge {
+            background: linear-gradient(135deg, var(--electric-purple), var(--digital-gold));
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.6rem;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-top: 4px;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+            animation: badgeGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes badgeGlow {
+            0% { box-shadow: 0 0 10px rgba(138, 43, 226, 0.5); }
+            100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
         }
         
         .gradient-text {
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--mystic));
+            background: linear-gradient(90deg, var(--digital-gold), var(--neon-blue), var(--electric-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: gradientShift 6s ease-in-out infinite;
         }
         
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        .digital-bg {
+            background: linear-gradient(135deg, var(--digital-gold), var(--electric-purple));
         }
         
-        .mystic-bg {
-            background: linear-gradient(135deg, var(--mystic), var(--primary));
+        .algorithm-bg {
+            background: linear-gradient(135deg, var(--electric-purple), var(--neon-blue));
         }
         
-        .fortune-bg {
-            background: linear-gradient(135deg, var(--fortune), var(--primary));
+        .blockchain-bg {
+            background: linear-gradient(135deg, var(--neon-blue), var(--digital-gold));
         }
         
         .card {
-            background-color: rgba(26, 32, 44, 0.7);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            transition: all 0.3s ease;
+            background: rgba(26, 32, 44, 0.9);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            transition: all 0.5s ease;
             overflow: hidden;
+            position: relative;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--digital-gold), var(--neon-blue), var(--electric-purple), transparent);
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
         
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
-            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(255, 215, 0, 0.3);
+            border-color: rgba(255, 215, 0, 0.6);
         }
         
+        .card:hover::before {
+            opacity: 1;
+        }
+        
+        /* 优化导航栏高度 */
         .navbar {
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            height: 80px;
+            display: flex;
+            align-items: center;
         }
         
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--mystic));
-            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--digital-gold), var(--electric-purple));
+            transition: all 0.5s ease;
             border: none;
-            font-weight: 600;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
         }
         
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.4);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5);
         }
         
         .btn-secondary {
-            background-color: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-            transition: all 0.3s ease;
-            font-weight: 600;
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            transition: all 0.5s ease;
+            font-weight: 700;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
         
         .btn-secondary:hover {
-            background-color: rgba(255, 107, 53, 0.1);
-            transform: translateY(-3px);
+            background: rgba(0, 212, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 212, 255, 0.4);
         }
         
         .hero {
             position: relative;
             overflow: hidden;
-            min-height: 70vh;
+            min-height: 85vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
+            padding-top: 100px; /* 增加顶部内边距 */
         }
         
         .hero:before {
@@ -137,13 +248,14 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.5) 100%);
             z-index: 1;
         }
         
         .hero-content {
             position: relative;
             z-index: 2;
+            padding-top: 40px; /* 确保内容不被导航栏遮挡 */
         }
         
         .hero-bg {
@@ -155,106 +267,103 @@
             background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            opacity: 0.6;
-            animation: bgPan 30s infinite linear;
+            opacity: 0.8;
+            animation: bgFloat 50s infinite linear;
         }
         
-        @keyframes bgPan {
-            0% { background-position: 0% 0%; }
-            50% { background-position: 100% 100%; }
-            100% { background-position: 0% 0%; }
+        @keyframes bgFloat {
+            0% { background-position: 0% 0%; transform: scale(1); }
+            50% { background-position: 100% 100%; transform: scale(1.08); }
+            100% { background-position: 0% 0%; transform: scale(1); }
         }
         
         .animate-fade-in {
-            animation: fadeIn 1s ease-in-out forwards;
+            animation: fadeIn 1.5s ease-in-out forwards;
             opacity: 0;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0; transform: translateY(40px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
         
         .location-card {
             position: relative;
-            background: rgba(26, 32, 44, 0.8);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
+            background: rgba(26, 32, 44, 0.95);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 25px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
         
         .location-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2);
-            border-color: var(--primary);
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(255, 215, 0, 0.4);
+            border-color: var(--digital-gold);
         }
         
-        .location-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.3), rgba(255, 107, 53, 0.3));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        
-        .location-card:hover .location-img {
-            transform: scale(1.05);
-        }
-        
-        .fortune-score {
+        .pra-score {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--digital-gold), var(--electric-purple));
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
         }
         
         .interaction-type {
             position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--fortune);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: var(--neon-blue);
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.5);
         }
         
         .countdown-timer {
-            background: linear-gradient(135deg, var(--mystic), var(--accent));
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+            background: linear-gradient(135deg, var(--electric-purple), var(--neon-blue));
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4);
+            animation: timerPulse 2s ease-in-out infinite alternate;
         }
         
-        .fortune-chart {
+        @keyframes timerPulse {
+            0% { box-shadow: 0 8px 25px rgba(138, 43, 226, 0.4); }
+            100% { box-shadow: 0 12px 35px rgba(0, 212, 255, 0.6); }
+        }
+        
+        .fortune-curve {
             width: 100%;
-            height: 60px;
+            height: 100px;
             background: linear-gradient(90deg, 
-                rgba(212, 175, 55, 0.2) 0%, 
-                rgba(255, 107, 53, 0.3) 30%, 
-                rgba(212, 175, 55, 0.4) 60%, 
-                rgba(255, 107, 53, 0.3) 100%);
-            border-radius: 8px;
+                rgba(255, 215, 0, 0.3) 0%, 
+                rgba(0, 212, 255, 0.4) 30%, 
+                rgba(255, 215, 0, 0.6) 60%, 
+                rgba(138, 43, 226, 0.5) 80%,
+                rgba(255, 215, 0, 0.4) 100%);
+            border-radius: 15px;
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.3);
         }
         
-        .fortune-chart::before {
+        .fortune-curve::before {
             content: '';
             position: absolute;
             top: 0;
@@ -264,29 +373,50 @@
             background: repeating-linear-gradient(
                 90deg,
                 transparent,
-                transparent 10px,
-                rgba(255, 255, 255, 0.1) 10px,
-                rgba(255, 255, 255, 0.1) 12px
+                transparent 20px,
+                rgba(255, 255, 255, 0.1) 20px,
+                rgba(255, 255, 255, 0.1) 22px
             );
         }
         
-        .fortune-chart::after {
-            content: '氣運高峰期';
+        .fortune-curve::after {
+            content: '氣運能量波動圖';
             position: absolute;
             top: 50%;
-            left: 60%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: white;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 0 15px rgba(0,0,0,0.8);
         }
         
-        .map-container {
-            background: rgba(26, 32, 44, 0.9);
-            border-radius: 16px;
-            min-height: 400px;
+        .fortune-map {
+            background: rgba(26, 32, 44, 0.95);
+            border-radius: 25px;
+            min-height: 500px;
             position: relative;
             overflow: hidden;
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 30% 40%, rgba(255, 215, 0, 0.4) 0%, transparent 25%),
+                radial-gradient(circle at 70% 30%, rgba(0, 212, 255, 0.3) 0%, transparent 20%),
+                radial-gradient(circle at 50% 70%, rgba(138, 43, 226, 0.3) 0%, transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(255, 215, 0, 0.3) 0%, transparent 15%);
+            animation: mapPulse 8s ease-in-out infinite;
+        }
+        
+        @keyframes mapPulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
         }
         
         .map-placeholder {
@@ -295,52 +425,148 @@
             left: 50%;
             transform: translate(-50%, -50%);
             text-align: center;
+            z-index: 2;
         }
         
-        .location-element {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin: 2px;
-            font-weight: 500;
+        .data-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+            gap: 10px;
+            margin-bottom: 20px;
         }
         
-        .location-temple { background: linear-gradient(135deg, #ff9800, #e65100); }
-        .location-mountain { background: linear-gradient(135deg, #4caf50, #2e7d32); }
-        .location-water { background: linear-gradient(135deg, #2196f3, #0d47a1); }
-        .location-finance { background: linear-gradient(135deg, #9e9e9e, #424242); }
-        .location-culture { background: linear-gradient(135deg, #f44336, #c62828); }
+        .matrix-item {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 12px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            transition: all 0.4s ease;
+        }
         
-        .mystic-element {
+        .matrix-item:hover {
+            border-color: var(--digital-gold);
+            background: rgba(255, 215, 0, 0.1);
+            transform: scale(1.05);
+        }
+        
+        .matrix-label {
+            font-size: 0.75rem;
+            color: #bbb;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        
+        .matrix-value {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--digital-gold);
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .stats-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 25px;
+            background: rgba(26, 32, 44, 0.8);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-card::before {
+            content: '';
             position: absolute;
-            background-color: rgba(212, 175, 55, 0.1);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            backdrop-filter: blur(5px);
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            color: var(--primary);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.8s ease;
+            opacity: 0;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--digital-gold);
+            background: rgba(26, 32, 44, 0.9);
+        }
+        
+        .stats-card:hover::before {
+            opacity: 1;
+            animation: shimmer 2s ease-in-out;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .stats-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--digital-gold);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stats-card .number {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--digital-gold), var(--neon-blue), var(--electric-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            z-index: 2;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: rgba(255, 215, 0, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.4);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            border-radius: 15px;
+            font-size: 13px;
+            color: var(--digital-gold);
             z-index: 3;
             pointer-events: none;
-            box-shadow: 0 0 15px rgba(212, 175, 55, 0.1);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            animation: float 8s ease-in-out infinite;
         }
         
-        .data-stream {
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-15px) rotate(1deg); }
+            50% { transform: translateY(-10px) rotate(-1deg); }
+            75% { transform: translateY(-20px) rotate(1deg); }
+        }
+        
+        .algorithm-stream {
             position: absolute;
-            height: 100px;
-            width: 2px;
-            background: linear-gradient(to bottom, transparent, var(--primary), var(--accent), transparent);
+            height: 150px;
+            width: 4px;
+            background: linear-gradient(to bottom, transparent, var(--digital-gold), var(--neon-blue), var(--electric-purple), transparent);
             z-index: 0;
-            animation: dataStream 2s linear infinite;
-            opacity: 0.3;
+            animation: algorithmFlow 4s linear infinite;
+            opacity: 0.5;
+            border-radius: 2px;
         }
         
-        @keyframes dataStream {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
+        @keyframes algorithmFlow {
+            0% { transform: translateY(-150%); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(100vh); opacity: 0; }
         }
         
+        /* 优化的移动菜单 */
         .mobile-menu {
             display: none;
             position: fixed;
@@ -348,89 +574,39 @@
             right: 0;
             width: 300px;
             height: 100vh;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(25px);
             z-index: 1000;
-            padding: 20px;
+            padding: 30px;
             transform: translateX(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
+            border-left: 2px solid rgba(255, 215, 0, 0.3);
         }
         
         .mobile-menu.open {
             transform: translateX(0);
         }
         
-        .stats-card {
-            text-align: center;
-            padding: 20px;
-            border-radius: 16px;
-            background: rgba(26, 32, 44, 0.5);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+        .mobile-menu a {
+            display: block;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            font-size: 1.1rem;
             transition: all 0.3s ease;
         }
         
-        .stats-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-            background: rgba(26, 32, 44, 0.7);
+        .mobile-menu a:hover {
+            color: var(--digital-gold);
+            transform: translateX(10px);
         }
         
-        .stats-card i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-        
-        .stats-card .number {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--mystic));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .data-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-        
-        .data-item {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 8px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .data-label {
-            font-size: 0.7rem;
-            color: #999;
-            margin-bottom: 4px;
-        }
-        
-        .data-value {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        
-        ::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.1);
-        }
-        
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, var(--primary), var(--mystic));
-            border-radius: 4px;
+        .mobile-menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            color: var(--digital-gold);
+            cursor: pointer;
         }
         
         @media (max-width: 768px) {
@@ -443,55 +619,131 @@
             }
             
             .logo-font {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
+                letter-spacing: 1px;
             }
             
             .hero {
-                min-height: 60vh;
+                min-height: 75vh;
             }
+            
+            .stats-card .number {
+                font-size: 2.2rem;
+            }
+            
+            .navbar {
+                height: 70px;
+                padding: 0 15px;
+            }
+            
+            .hero {
+                padding-top: 90px;
+            }
+            
+            .hero-content {
+                padding-top: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+        
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--digital-gold), var(--electric-purple));
+            border-radius: 6px;
+        }
+        
+        .location-img {
+            width: 100%;
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 700;
+            transition: transform 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .location-card:hover .location-img {
+            transform: scale(1.05);
+        }
+        
+        .location-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(255,215,0,0.1), rgba(0,0,0,0.3));
+            z-index: 1;
+        }
+        
+        .location-img span {
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+        
+        /* 修正排版错误 */
+        .fortune-record {
+            background: rgba(26, 32, 44, 0.9);
+            border-radius: 15px;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .fortune-record h4 {
+            font-weight: 700;
+            color: var(--digital-gold);
+            margin-bottom: 8px;
+        }
+        
+        .fortune-record p {
+            font-size: 0.9rem;
+            color: #bbb;
         }
     </style>
 </head>
 <body>
-    <!-- Mystic Elements -->
-    <div class="mystic-element" style="top: 120px; left: 10%;">
-        地點分析中...<br>
-        氣運指數: ★★★★☆ <br>
-        // Location Scanning
-    </div>
-    
-    <div class="mystic-element" style="bottom: 150px; right: 15%;">
-        風水評分: 85/100<br>
-        最佳時間: 15:30-17:00<br>
-        // Fortune Peak Time
-    </div>
-    
-    <!-- Data streams -->
-    <div class="data-stream" style="left: 20%; animation-delay: 0s;"></div>
-    <div class="data-stream" style="left: 40%; animation-delay: 0.5s;"></div>
-    <div class="data-stream" style="left: 60%; animation-delay: 1s;"></div>
-    <div class="data-stream" style="left: 80%; animation-delay: 1.5s;"></div>
-
     <!-- Navigation -->
     <nav class="navbar fixed w-full z-50 px-4 py-3">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="flex flex-col items-center">
-                <div class="logo-font">8.rich</div>
-                <div class="logo-sub">氣運之地探索平台</div>
+                <div class="logo-font">1234567.world</div>
+                <div class="logo-sub">Meta-Tech Platform</div>
+                <div class="meta-tech-badge">玄學科技</div>
             </a>
             <div class="hidden md:flex space-x-8 desktop-nav">
-                <a href="#locations" class="hover:text-yellow-400 transition">熱門地點</a>
-                <a href="#map" class="hover:text-yellow-400 transition">氣運地圖</a>
-                <a href="#howitworks" class="hover:text-yellow-400 transition">使用方法</a>
-                <a href="activator.html" class="hover:text-yellow-400 transition">成為激活者</a>
-                <a href="#about" class="hover:text-yellow-400 transition">關於我們</a>
+                <a href="#discover" class="hover:text-yellow-400 transition-colors duration-300">發現地點</a>
+                <a href="#map" class="hover:text-yellow-400 transition-colors duration-300">氣運地圖</a>
+                <a href="#algorithm" class="hover:text-yellow-400 transition-colors duration-300">PRA算法</a>
+                <a href="#journey" class="hover:text-yellow-400 transition-colors duration-300">數字煉金術</a>
+                <a href="#ecosystem" class="hover:text-yellow-400 transition-colors duration-300">生態系統</a>
             </div>
             <div class="flex items-center space-x-4">
-                <button class="btn-secondary px-6 py-2 rounded-full text-sm">
-                    登入
+                <button class="btn-secondary px-6 py-2 rounded-full text-sm hidden md:block">
+                    探索者登入
                 </button>
-                <button class="btn-primary px-6 py-2 rounded-full text-sm">
-                    開始探索
+                <button class="btn-primary px-6 py-2 rounded-full text-sm hidden md:block">
+                    激活地點
                 </button>
                 <button class="md:hidden text-white mobile-menu-btn">
                     <i class="fas fa-bars text-xl"></i>
@@ -502,23 +754,22 @@
 
     <!-- Mobile Menu -->
     <div class="mobile-menu">
-        <div class="mobile-menu-close text-yellow-400 cursor-pointer">
-            <i class="fas fa-times text-xl"></i>
+        <div class="mobile-menu-close">
+            <i class="fas fa-times"></i>
         </div>
-        
-        <div class="mt-12 flex flex-col space-y-6">
-            <a href="#locations" class="text-xl hover:text-yellow-400 transition">熱門地點</a>
-            <a href="#map" class="text-xl hover:text-yellow-400 transition">氣運地圖</a>
-            <a href="#howitworks" class="text-xl hover:text-yellow-400 transition">使用方法</a>
-            <a href="activator.html" class="text-xl hover:text-yellow-400 transition">成為激活者</a>
-            <a href="#about" class="text-xl hover:text-yellow-400 transition">關於我們</a>
-            
-            <div class="pt-6 border-t border-gray-700">
-                <button class="btn-primary w-full py-3 rounded-lg font-medium text-center mb-4">
-                    開始探索
+        <div class="mt-10">
+            <a href="#discover">發現地點</a>
+            <a href="#map">氣運地圖</a>
+            <a href="#algorithm">PRA算法</a>
+            <a href="#journey">數字煉金術</a>
+            <a href="#ecosystem">生態系統</a>
+            <a href="#about">關於我們</a>
+            <div class="mt-8 flex space-x-4">
+                <button class="btn-secondary px-6 py-2 rounded-full text-sm w-full">
+                    探索者登入
                 </button>
-                <button class="btn-secondary w-full py-3 rounded-lg font-medium text-center">
-                    登入賬戶
+                <button class="btn-primary px-6 py-2 rounded-full text-sm w-full">
+                    激活地點
                 </button>
             </div>
         </div>
@@ -528,48 +779,48 @@
     <section class="hero">
         <div class="hero-bg"></div>
         <div class="container mx-auto px-4 hero-content">
-            <div class="max-w-4xl animate-fade-in">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                    發現身邊的
-                    <span class="gradient-text">氣運之地</span>
+            <div class="max-w-5xl animate-fade-in">
+                <h1 class="text-4xl md:text-7xl font-bold mb-8">
+                    開啟
+                    <span class="gradient-text">數字煉金術</span>
+                    新時代
                 </h1>
-                <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-                    運用AI算法分析城市中每個地點的風水能量，
-                    結合你的個人八字特徵，為你推薦最適合的氣運提升地點。
-                    在忙碌的都市生活中，找到屬於你的幸運角落。
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                    1234567.world 革命性玄學科技平台，運用AI算法將古代"天地人三才"智慧數字化。
+                    通過個人化共鳴算法(PRA)，為現代都市人創造可見、可理解、可操作的氣運優化體驗。
                 </p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
-                    <button class="btn-primary px-8 py-4 rounded-full font-medium text-center">
-                        <i class="fas fa-search mr-2"></i>
-                        探索附近地點
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                    <button class="btn-primary px-10 py-4 rounded-full font-medium text-center text-lg">
+                        <i class="fas fa-search mr-3"></i>
+                        開始氣運探索
                     </button>
-                    <button class="btn-secondary px-8 py-4 rounded-full font-medium text-center">
-                        <i class="fas fa-map-marked-alt mr-2"></i>
-                        查看氣運地圖
+                    <button class="btn-secondary px-10 py-4 rounded-full font-medium text-center text-lg">
+                        <i class="fas fa-brain mr-3"></i>
+                        體驗PRA算法
                     </button>
                 </div>
                 
-                <!-- 統計數據 -->
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <!-- 核心數據展示 -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                     <div class="stats-card">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div class="number">5000+</div>
+                        <i class="fas fa-microchip"></i>
+                        <div class="number">AI</div>
+                        <div class="text-sm">驅動算法</div>
+                    </div>
+                    <div class="stats-card">
+                        <i class="fas fa-infinity"></i>
+                        <div class="number">10000+</div>
                         <div class="text-sm">激活地點</div>
                     </div>
                     <div class="stats-card">
                         <i class="fas fa-users"></i>
-                        <div class="number">10萬+</div>
-                        <div class="text-sm">探索者</div>
-                    </div>
-                    <div class="stats-card">
-                        <i class="fas fa-star"></i>
                         <div class="number">50萬+</div>
-                        <div class="text-sm">氣運鑄造</div>
+                        <div class="text-sm">數字煉金術士</div>
                     </div>
                     <div class="stats-card">
-                        <i class="fas fa-chart-line"></i>
-                        <div class="number">85%</div>
-                        <div class="text-sm">氣運提升率</div>
+                        <i class="fas fa-link"></i>
+                        <div class="number">200萬+</div>
+                        <div class="text-sm">氣運鑄造記錄</div>
                     </div>
                 </div>
             </div>
@@ -577,84 +828,86 @@
     </section>
 
     <!-- 氣運地圖 -->
-    <section class="py-16" id="map">
+    <section class="py-20" id="map">
         <div class="container mx-auto px-4">
-            <div class="text-center mb-12 animate-fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    <span class="gradient-text">上海氣運地圖</span>
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                    <span class="gradient-text">智能氣運地圖</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    實時顯示上海各地的氣運地點，按照距離和匹配度為你推薦
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    實時顯示城市氣運能量分佈，AI算法精準計算個人化匹配度和最佳互動時機
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <!-- 地圖區域 -->
+                <!-- 氣運地圖區域 -->
                 <div class="lg:col-span-2">
-                    <div class="map-container">
+                    <div class="fortune-map">
+                        <div class="map-overlay"></div>
                         <div class="map-placeholder">
-                            <i class="fas fa-map text-6xl text-yellow-400 mb-4"></i>
-                            <h3 class="text-xl font-bold mb-2">互動氣運地圖</h3>
-                            <p class="text-gray-400">點擊地點查看詳細資訊</p>
-                            <button class="btn-primary mt-4 px-6 py-2 rounded-lg">
+                            <i class="fas fa-globe-asia text-8xl text-yellow-400 mb-6"></i>
+                            <h3 class="text-3xl font-bold mb-4">實時氣運地圖</h3>
+                            <p class="text-gray-400 mb-6">AI驅動的動態能量分佈可視化</p>
+                            <button class="btn-primary px-8 py-3 rounded-lg text-lg">
+                                <i class="fas fa-play mr-2"></i>
                                 啟動地圖
                             </button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 推薦地點列表 -->
-                <div class="space-y-4">
-                    <h3 class="text-xl font-bold mb-4">距離最近的地點</h3>
+                <!-- 實時推薦地點列表 -->
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold mb-6">個人化推薦</h3>
                     
-                    <!-- 地點項目1 -->
-                    <div class="card p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-bold">靜安寺</h4>
-                            <span class="text-sm text-yellow-400">1.2km</span>
-                        </div>
+                    <!-- 推薦地點1 -->
+                    <div class="card p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-gray-400">匹配度: 92%</span>
-                            <span class="text-sm text-blue-400">聲音共振</span>
+                            <h4 class="font-bold text-lg">靜安寺</h4>
+                            <span class="text-sm text-blue-400">1.2km</span>
                         </div>
-                        <div class="fortune-chart mb-3"></div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-400">PRA匹配度: 94%</span>
+                            <span class="text-sm text-green-400">聲音共振</span>
+                        </div>
+                        <div class="fortune-curve mb-4"></div>
                         <div class="countdown-timer">
                             <i class="fas fa-clock mr-2"></i>
-                            最佳時機: 1小時15分鐘後
+                            <span class="countdown" data-target="87">01:27:43</span>
                         </div>
                     </div>
                     
-                    <!-- 地點項目2 -->
-                    <div class="card p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-bold">外灘</h4>
-                            <span class="text-sm text-yellow-400">3.5km</span>
-                        </div>
+                    <!-- 推薦地點2 -->
+                    <div class="card p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-gray-400">匹配度: 88%</span>
-                            <span class="text-sm text-blue-400">水系冥想</span>
+                            <h4 class="font-bold text-lg">陸家嘴金融區</h4>
+                            <span class="text-sm text-blue-400">3.5km</span>
                         </div>
-                        <div class="fortune-chart mb-3"></div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-400">PRA匹配度: 91%</span>
+                            <span class="text-sm text-purple-400">能量聚焦</span>
+                        </div>
+                        <div class="fortune-curve mb-4"></div>
                         <div class="countdown-timer">
                             <i class="fas fa-clock mr-2"></i>
-                            最佳時機: 3小時42分鐘後
+                            <span class="countdown" data-target="142">02:22:15</span>
                         </div>
                     </div>
                     
-                    <!-- 地點項目3 -->
-                    <div class="card p-4">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-bold">陸家嘴金融區</h4>
-                            <span class="text-sm text-yellow-400">5.8km</span>
-                        </div>
+                    <!-- 推薦地點3 -->
+                    <div class="card p-6">
                         <div class="flex items-center justify-between mb-3">
-                            <span class="text-sm text-gray-400">匹配度: 85%</span>
-                            <span class="text-sm text-blue-400">能量聚焦</span>
+                            <h4 class="font-bold text-lg">外灘</h4>
+                            <span class="text-sm text-blue-400">5.8km</span>
                         </div>
-                        <div class="fortune-chart mb-3"></div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-sm text-gray-400">PRA匹配度: 88%</span>
+                            <span class="text-sm text-cyan-400">水系冥想</span>
+                        </div>
+                        <div class="fortune-curve mb-4"></div>
                         <div class="countdown-timer">
                             <i class="fas fa-clock mr-2"></i>
-                            最佳時機: 2小時28分鐘後
+                            <span class="countdown" data-target="198">03:18:27</span>
                         </div>
                     </div>
                 </div>
@@ -662,216 +915,171 @@
         </div>
     </section>
 
-    <!-- 熱門地點展示 -->
-    <section class="py-20 bg-gray-900" id="locations">
+    <!-- 氣運地點發現 -->
+    <section class="py-20 bg-gray-900" id="discover">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    <span class="gradient-text">上海熱門氣運地點</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                    <span class="gradient-text">智能氣運地點發現</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    探索上海最受歡迎的氣運提升地點，發現城市中的隱藏寶藏
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    運用地理靈性數據層技術，實時分析城市中每個地點的風水能量分佈
                 </p>
             </div>
             
-            <!-- 地點類型篩選 -->
-            <div class="mb-8 text-center">
-                <div class="flex flex-wrap justify-center gap-4">
-                    <span class="location-element location-temple">寺廟道觀</span>
-                    <span class="location-element location-mountain">園林公園</span>
-                    <span class="location-element location-water">江河水景</span>
-                    <span class="location-element location-finance">金融中心</span>
-                    <span class="location-element location-culture">文化古蹟</span>
-                </div>
-            </div>
-            
-            <!-- 地點網格展示 -->
+            <!-- 地點展示網格 -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <!-- 地點1：靜安寺 -->
                 <div class="location-card">
                     <div class="relative">
-                        <div class="location-img">📿 靜安寺圖片占位符</div>
-                        <div class="fortune-score">氣運分: 94</div>
+                        <div class="location-img bg-gradient-to-br from-orange-400 to-red-600">
+                            <span>📿 靜安寺 - 佛教聖地</span>
+                        </div>
+                        <div class="pra-score">PRA: 94</div>
                         <div class="interaction-type">聲音共振</div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold">靜安寺</h3>
-                            <span class="location-element location-temple">佛教聖地</span>
+                            <span class="px-3 py-1 bg-orange-600 rounded-full text-xs">寺廟道觀</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            上海著名古剎，香火旺盛，都市中的靈修聖地
-                        </p>
                         
-                        <!-- 核心運算數據 -->
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">89</div>
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">89</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">92</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">92</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">八白</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">八白</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">土</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">水口方位</div>
-                                <div class="data-value">巽位</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">龍脈走向</div>
-                                <div class="data-value">東南</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">時辰吉凶</div>
-                                <div class="data-value">申酉</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">能量密度</div>
-                                <div class="data-value">高</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">土</div>
                             </div>
                         </div>
                         
-                        <div class="fortune-chart mb-4"></div>
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="87">最佳時機: 01:27:43</span>
+                        </div>
+                        
                         <div class="flex justify-between items-center">
                             <div class="text-sm text-gray-400">
-                                鑄造方式：誦經祈福 + 鐘聲共振
+                                互動：誦經祈福 + 鐘聲共振
                             </div>
                             <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
+                                開始鑄造
                             </button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- 地點2：外灘 -->
+                <!-- 地點2：陸家嘴金融區 -->
                 <div class="location-card">
                     <div class="relative">
-                        <div class="location-img">🌊 外灘江景占位符</div>
-                        <div class="fortune-score">氣運分: 91</div>
-                        <div class="interaction-type">水系冥想</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
-                            <h3 class="text-xl font-bold">外灘</h3>
-                            <span class="location-element location-water">江河水景</span>
+                        <div class="location-img bg-gradient-to-br from-gray-400 to-gray-600">
+                            <span>🏢 陸家嘴金融中心</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            黃浦江畔，氣勢磅礴，水龍匯聚之地
-                        </p>
-                        
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">95</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">87</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">一白</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">水</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">水勢流向</div>
-                                <div class="data-value">東北</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">明堂開闊</div>
-                                <div class="data-value">極佳</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">氣場強度</div>
-                                <div class="data-value">95%</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">人流密度</div>
-                                <div class="data-value">中</div>
-                            </div>
-                        </div>
-                        
-                        <div class="fortune-chart mb-4"></div>
-                        <div class="flex justify-between items-center">
-                            <div class="text-sm text-gray-400">
-                                鑄造方式：觀水冥想 + 呼吸調息
-                            </div>
-                            <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 地點3：陸家嘴金融區 -->
-                <div class="location-card">
-                    <div class="relative">
-                        <div class="location-img">🏢 陸家嘴建築群占位符</div>
-                        <div class="fortune-score">氣運分: 88</div>
+                        <div class="pra-score">PRA: 91</div>
                         <div class="interaction-type">能量聚焦</div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold">陸家嘴金融區</h3>
-                            <span class="location-element location-finance">金融中心</span>
+                            <span class="px-3 py-1 bg-gray-600 rounded-full text-xs">金融中心</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            摩天大樓林立，現代都市龍脈，金氣匯聚
-                        </p>
                         
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">82</div>
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">85</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">94</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">97</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">六白</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">六白</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">金</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">建築格局</div>
-                                <div class="data-value">聚寶盆</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">電磁場強</div>
-                                <div class="data-value">87%</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">商業繁榮</div>
-                                <div class="data-value">極高</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">人氣指數</div>
-                                <div class="data-value">98</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">金</div>
                             </div>
                         </div>
                         
-                        <div class="fortune-chart mb-4"></div>
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="142">最佳時機: 02:22:15</span>
+                        </div>
+                        
                         <div class="flex justify-between items-center">
                             <div class="text-sm text-gray-400">
-                                鑄造方式：視覺聚焦 + 意念集中
+                                互動：視覺聚焦 + AR金幣鑄造
                             </div>
                             <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
+                                開始鑄造
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 地點3：外灘 -->
+                <div class="location-card">
+                    <div class="relative">
+                        <div class="location-img bg-gradient-to-br from-blue-400 to-blue-700">
+                            <span>🌊 外灘江景</span>
+                        </div>
+                        <div class="pra-score">PRA: 88</div>
+                        <div class="interaction-type">水系冥想</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold">外灘</h3>
+                            <span class="px-3 py-1 bg-blue-600 rounded-full text-xs">江河水景</span>
+                        </div>
+                        
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">95</div>
+                            </div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">81</div>
+                            </div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">一白</div>
+                            </div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">水</div>
+                            </div>
+                        </div>
+                        
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="198">最佳時機: 03:18:27</span>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="text-sm text-gray-400">
+                                互動：觀水冥想 + 呼吸調息
+                            </div>
+                            <button class="btn-primary px-4 py-2 rounded-lg text-sm">
+                                開始鑄造
                             </button>
                         </div>
                     </div>
@@ -880,61 +1088,50 @@
                 <!-- 地點4：豫園 -->
                 <div class="location-card">
                     <div class="relative">
-                        <div class="location-img">🏮 豫園古建築占位符</div>
-                        <div class="fortune-score">氣運分: 93</div>
+                        <div class="location-img bg-gradient-to-br from-green-500 to-yellow-600">
+                            <span>🏮 豫園古建築</span>
+                        </div>
+                        <div class="pra-score">PRA: 93</div>
                         <div class="interaction-type">香氛感應</div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold">豫園</h3>
-                            <span class="location-element location-culture">文化古蹟</span>
+                            <span class="px-3 py-1 bg-yellow-600 rounded-full text-xs">文化古蹟</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            明代古園，江南風韻，文化底蘊深厚
-                        </p>
                         
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">96</div>
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">96</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">90</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">90</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">四綠</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">四綠</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">木</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">園林佈局</div>
-                                <div class="data-value">曲水流觴</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">文氣濃度</div>
-                                <div class="data-value">92%</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">古樹年輪</div>
-                                <div class="data-value">400年</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">靈性指數</div>
-                                <div class="data-value">高</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">木</div>
                             </div>
                         </div>
                         
-                        <div class="fortune-chart mb-4"></div>
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="164">最佳時機: 02:44:18</span>
+                        </div>
+                        
                         <div class="flex justify-between items-center">
                             <div class="text-sm text-gray-400">
-                                鑄造方式：檀香感應 + 書香品味
+                                互動：檀香感應 + 書香品味
                             </div>
                             <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
+                                開始鑄造
                             </button>
                         </div>
                     </div>
@@ -943,61 +1140,50 @@
                 <!-- 地點5：世紀公園 -->
                 <div class="location-card">
                     <div class="relative">
-                        <div class="location-img">🌳 世紀公園綠地占位符</div>
-                        <div class="fortune-score">氣運分: 86</div>
+                        <div class="location-img bg-gradient-to-br from-green-400 to-emerald-600">
+                            <span>🌳 世紀公園綠地</span>
+                        </div>
+                        <div class="pra-score">PRA: 86</div>
                         <div class="interaction-type">自然律動</div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold">世紀公園</h3>
-                            <span class="location-element location-mountain">園林公園</span>
+                            <span class="px-3 py-1 bg-green-600 rounded-full text-xs">園林公園</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            都市綠肺，生態平衡，自然氣息濃郁
-                        </p>
                         
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">88</div>
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">88</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">84</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">84</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">三碧</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">三碧</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">木</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">植被覆蓋</div>
-                                <div class="data-value">85%</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">負氧離子</div>
-                                <div class="data-value">極高</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">湖泊面積</div>
-                                <div class="data-value">12公頃</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">生態平衡</div>
-                                <div class="data-value">優</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">木</div>
                             </div>
                         </div>
                         
-                        <div class="fortune-chart mb-4"></div>
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="236">最佳時機: 03:56:12</span>
+                        </div>
+                        
                         <div class="flex justify-between items-center">
                             <div class="text-sm text-gray-400">
-                                鑄造方式：森林浴 + 太極緩動
+                                互動：森林浴 + 太極緩動
                             </div>
                             <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
+                                開始鑄造
                             </button>
                         </div>
                     </div>
@@ -1006,61 +1192,50 @@
                 <!-- 地點6：上海博物館 -->
                 <div class="location-card">
                     <div class="relative">
-                        <div class="location-img">🏛️ 上海博物館建築占位符</div>
-                        <div class="fortune-score">氣運分: 90</div>
+                        <div class="location-img bg-gradient-to-br from-purple-500 to-indigo-600">
+                            <span>🏛️ 上海博物館</span>
+                        </div>
+                        <div class="pra-score">PRA: 90</div>
                         <div class="interaction-type">文化共鳴</div>
                     </div>
                     <div class="p-6">
-                        <div class="flex justify-between items-center mb-2">
+                        <div class="flex justify-between items-center mb-4">
                             <h3 class="text-xl font-bold">上海博物館</h3>
-                            <span class="location-element location-culture">文化殿堂</span>
+                            <span class="px-3 py-1 bg-purple-600 rounded-full text-xs">文化殿堂</span>
                         </div>
-                        <p class="text-gray-400 text-sm mb-4">
-                            文物薈萃，歷史積澱，文化氣場深厚
-                        </p>
                         
-                        <div class="data-grid">
-                            <div class="data-item">
-                                <div class="data-label">峦頭評分</div>
-                                <div class="data-value">85</div>
+                        <div class="data-matrix">
+                            <div class="matrix-item">
+                                <div class="matrix-label">巒頭評分</div>
+                                <div class="matrix-value">85</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">理氣評分</div>
-                                <div class="data-value">95</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">理氣評分</div>
+                                <div class="matrix-value">95</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">當前飛星</div>
-                                <div class="data-value">四綠</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">當前飛星</div>
+                                <div class="matrix-value">四綠</div>
                             </div>
-                            <div class="data-item">
-                                <div class="data-label">主導五行</div>
-                                <div class="data-value">土</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">建築造型</div>
-                                <div class="data-value">天圓地方</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">文物年代</div>
-                                <div class="data-value">千年</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">知識密度</div>
-                                <div class="data-value">極高</div>
-                            </div>
-                            <div class="data-item">
-                                <div class="data-label">文化厚重</div>
-                                <div class="data-value">97%</div>
+                            <div class="matrix-item">
+                                <div class="matrix-label">主導五行</div>
+                                <div class="matrix-value">土</div>
                             </div>
                         </div>
                         
-                        <div class="fortune-chart mb-4"></div>
+                        <div class="fortune-curve mb-4"></div>
+                        
+                        <div class="countdown-timer mb-4">
+                            <i class="fas fa-hourglass-half mr-2"></i>
+                            <span class="countdown" data-target="312">最佳時機: 05:12:45</span>
+                        </div>
+                        
                         <div class="flex justify-between items-center">
                             <div class="text-sm text-gray-400">
-                                鑄造方式：古物觀想 + 歷史感悟
+                                互動：古物觀想 + 歷史感悟
                             </div>
                             <button class="btn-primary px-4 py-2 rounded-lg text-sm">
-                                開始互動
+                                開始鑄造
                             </button>
                         </div>
                     </div>
@@ -1068,134 +1243,292 @@
             </div>
             
             <div class="text-center">
-                <button class="btn-secondary px-8 py-3 rounded-full font-medium">
+                <button class="btn-secondary px-8 py-3 rounded-full font-medium text-lg">
                     <i class="fas fa-map mr-2"></i>
-                    查看完整地圖
+                    查看完整氣運地圖
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- 使用方法 -->
-    <section class="py-20" id="howitworks">
+    <!-- 氣運鑄造成果 -->
+    <div class="container mx-auto px-4">
+        <div class="fortune-record">
+            <h4 class="font-bold mb-2 text-yellow-400">氣運鑄造記錄</h4>
+            <p class="text-sm">區塊鏈永久存儲互動數據</p>
+        </div>
+    </div>
+
+    <!-- 數字煉金術體驗流程 -->
+    <section class="py-20 bg-gray-900" id="journey">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    <span class="gradient-text">簡單三步</span>
-                    開始氣運鑄造
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                    <span class="gradient-text">發現-鏈接-互動-鑄造</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    選擇地點，感應互動，數據鑄造，讓傳統智慧指導現代生活
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    四步完成數字煉金術體驗，讓每個人都能成為自己人生的數字煉金術士
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-                <!-- 步驟1：選擇地點 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- 步驟1：發現 -->
                 <div class="text-center animate-fade-in">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full gradient-bg flex items-center justify-center">
-                        <i class="fas fa-search text-2xl text-white"></i>
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full digital-bg flex items-center justify-center">
+                        <i class="fas fa-search text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">1. 選擇地點</h3>
+                    <h3 class="text-2xl font-bold mb-4">1. 發現</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        瀏覽附近的氣運地點，查看匹配度和核心運算數據。
-                        每個地點都有詳細的風水分析和最佳時機提示。
+                        AI智能地圖顯示個人化氣運熱力圖，
+                        根據您的八字特徵推薦最佳匹配地點
                     </p>
                 </div>
                 
-                <!-- 步驟2：感應互動 -->
+                <!-- 步驟2：鏈接 -->
                 <div class="text-center animate-fade-in">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full mystic-bg flex items-center justify-center">
-                        <i class="fas fa-hand-sparkles text-2xl text-white"></i>
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full algorithm-bg flex items-center justify-center">
+                        <i class="fas fa-link text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">2. 感應互動</h3>
+                    <h3 class="text-2xl font-bold mb-4">2. 鏈接</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        到達地點後，根據地點類型進行不同的感應互動：
-                        音頻共振、香氛冥想、動作儀式、觀想感悟等。
+                        PRA算法實時分析地點能量屬性，
+                        計算當前時間的最佳互動方式
                     </p>
                 </div>
                 
-                <!-- 步驟3：數據鑄造 -->
+                <!-- 步驟3：互動 -->
                 <div class="text-center animate-fade-in">
-                    <div class="w-20 h-20 mx-auto mb-6 rounded-full fortune-bg flex items-center justify-center">
-                        <i class="fas fa-link text-2xl text-white"></i>
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full blockchain-bg flex items-center justify-center">
+                        <i class="fas fa-hand-sparkles text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">3. 數據鑄造</h3>
+                    <h3 class="text-2xl font-bold mb-4">3. 互動</h3>
                     <p class="text-gray-400 leading-relaxed">
-                        完成互動後，選擇將數據永久記錄在地點區塊鏈上。
-                        支付鑄造費用，獲得獨特的氣運數據鏈接證明。
+                        AR引導的沉浸式體驗：
+                        聲音共振、香氛感應、視覺觀想等
+                    </p>
+                </div>
+                
+                <!-- 步驟4：鑄造 -->
+                <div class="text-center animate-fade-in">
+                    <div class="w-24 h-24 mx-auto mb-6 rounded-full mystic-bg flex items-center justify-center">
+                        <i class="fas fa-coins text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">4. 鑄造</h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        將氣運數據永久記錄在區塊鏈上，
+                        生成獨特的數字氣運資產
                     </p>
                 </div>
             </div>
             
-            <!-- 互動方式詳細說明 -->
+            <!-- AR互動體驗展示 -->
             <div class="card p-8">
                 <div class="text-center mb-8">
-                    <h3 class="text-2xl font-bold mb-4">多元化互動方式</h3>
-                    <p class="text-gray-400">根據地點特性和個人需求，提供豐富的感應互動體驗</p>
+                    <h3 class="text-3xl font-bold mb-4">沉浸式AR互動體驗</h3>
+                    <p class="text-gray-400">根據地點性質和用戶目標設計的差異化互動模式</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-volume-up text-3xl text-blue-400 mb-3"></i>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-volume-up text-4xl text-blue-400 mb-4"></i>
                         <h4 class="font-bold mb-2">聲音共振</h4>
-                        <p class="text-sm text-gray-400">鐘聲、誦經、音叉震動</p>
+                        <p class="text-sm text-gray-400">鐘聲、誦經、音叉震動療癒</p>
                     </div>
                     
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-leaf text-3xl text-green-400 mb-3"></i>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-leaf text-4xl text-green-400 mb-4"></i>
                         <h4 class="font-bold mb-2">香氛感應</h4>
-                        <p class="text-sm text-gray-400">檀香、花香、草木香</p>
+                        <p class="text-sm text-gray-400">檀香、花香、自然氣息捕捉</p>
                     </div>
                     
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-eye text-3xl text-purple-400 mb-3"></i>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-eye text-4xl text-purple-400 mb-4"></i>
                         <h4 class="font-bold mb-2">視覺觀想</h4>
-                        <p class="text-sm text-gray-400">建築觀賞、景色冥想</p>
+                        <p class="text-sm text-gray-400">建築美學、景色冥想引導</p>
                     </div>
                     
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-hands text-3xl text-yellow-400 mb-3"></i>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center transition-all duration-300 hover:bg-gray-700">
+                        <i class="fas fa-hands text-4xl text-yellow-400 mb-4"></i>
                         <h4 class="font-bold mb-2">動作儀式</h4>
-                        <p class="text-sm text-gray-400">太極、瑜伽、禮拜</p>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-water text-3xl text-cyan-400 mb-3"></i>
-                        <h4 class="font-bold mb-2">水系冥想</h4>
-                        <p class="text-sm text-gray-400">流水觀想、呼吸調息</p>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-fire text-3xl text-red-400 mb-3"></i>
-                        <h4 class="font-bold mb-2">能量聚焦</h4>
-                        <p class="text-sm text-gray-400">意念集中、氣場感應</p>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-book text-3xl text-indigo-400 mb-3"></i>
-                        <h4 class="font-bold mb-2">文化共鳴</h4>
-                        <p class="text-sm text-gray-400">歷史感悟、古物觀想</p>
-                    </div>
-                    
-                    <div class="text-center p-4 bg-gray-800 rounded-lg">
-                        <i class="fas fa-tree text-3xl text-emerald-400 mb-3"></i>
-                        <h4 class="font-bold mb-2">自然律動</h4>
-                        <p class="text-sm text-gray-400">森林浴、生態感應</p>
+                        <p class="text-sm text-gray-400">太極、瑜伽、禮拜動作感應</p>
                     </div>
                 </div>
                 
-                <div class="mt-8 p-6 bg-yellow-400 bg-opacity-10 rounded-lg border border-yellow-400">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-coins text-yellow-400 text-2xl mr-4"></i>
-                        <div>
-                            <h4 class="font-bold text-yellow-400">鑄造費用說明</h4>
-                            <p class="text-sm text-gray-300">費用於互動完成後實時計算，根據地點價值、互動複雜度、區塊鏈記錄成本等因素動態定價</p>
+                <div class="mt-8 p-6 bg-gradient-to-r from-yellow-400 to-purple-600 bg-opacity-20 rounded-lg border border-yellow-400">
+                    <div class="flex items-center justify-center mb-4">
+                        <i class="fas fa-coins text-yellow-400 text-3xl mr-4"></i>
+                        <div class="text-center">
+                            <h4 class="font-bold text-yellow-400 text-xl">鑄造費用動態定價</h4>
+                            <p class="text-sm text-gray-300">基於地點價值、互動複雜度、區塊鏈記錄成本等因素</p>
                         </div>
                     </div>
                     <div class="text-center">
-                        <span class="text-2xl font-bold text-yellow-400">HK$0.99 - HK$999</span>
-                        <p class="text-sm text-gray-400 mt-2">僅在選擇記錄區塊鏈時收費，不記錄則免費體驗</p>
+                        <span class="text-3xl font-bold text-yellow-400">¥9.9 - ¥999</span>
+                        <p class="text-sm text-gray-400 mt-2">僅在選擇區塊鏈記錄時收費，純體驗完全免費</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 雙邊市場生態系統 -->
+    <section class="py-20" id="ecosystem">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
+                    <span class="gradient-text">氣運織網經濟體系</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    構建地點激活者與氣運探索者的雙邊市場，創造可持續的價值循環飛輪
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+                <!-- 地點激活者 -->
+                <div class="card p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full digital-bg flex items-center justify-center">
+                            <i class="fas fa-map-marker-alt text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">地點激活者</h3>
+                        <p class="text-gray-400">地點發掘者和數字守護人</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-store text-yellow-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">商店店主</h4>
+                                <p class="text-gray-400 text-sm">為店鋪增加文化附加值</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-building text-yellow-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">地產開發商</h4>
+                                <p class="text-gray-400 text-sm">為項目增加獨特賣點</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-book text-yellow-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">文化愛好者</h4>
+                                <p class="text-gray-400 text-sm">激活有歷史意義的地點</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-line text-yellow-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">投資者</h4>
+                                <p class="text-gray-400 text-sm">新型數字資產投資機會</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-400 bg-opacity-20 p-6 rounded-lg border border-yellow-400">
+                        <h4 class="font-bold text-yellow-400 mb-2 text-lg">收入分成</h4>
+                        <p class="text-3xl font-bold text-yellow-400 mb-2">50%</p>
+                        <p class="text-sm text-gray-400">每次用戶鑄造的分成收入</p>
+                    </div>
+                </div>
+                
+                <!-- 氣運探索者 -->
+                <div class="card p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 mx-auto mb-4 rounded-full algorithm-bg flex items-center justify-center">
+                            <i class="fas fa-user-astronaut text-2xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">氣運探索者</h3>
+                        <p class="text-gray-400">尋求個人氣運優化的個體用戶</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-compass text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">個性化指導</h4>
+                                <p class="text-gray-400 text-sm">獲得環境能量最佳建議</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-vr-cardboard text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">科技體驗</h4>
+                                <p class="text-gray-400 text-sm">文化科技融合的沉浸體驗</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-balance-scale text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">身心平衡</h4>
+                                <p class="text-gray-400 text-sm">在忙碌生活中找到內心和諧</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-users text-blue-400 mr-3 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold mb-1">社群交流</h4>
+                                <p class="text-gray-400 text-sm">與志同道合的人分享體驗</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-blue-400 bg-opacity-20 p-6 rounded-lg border border-blue-400">
+                        <h4 class="font-bold text-blue-400 mb-2 text-lg">會員套餐</h4>
+                        <p class="text-3xl font-bold text-blue-400 mb-2">¥99/月</p>
+                        <p class="text-sm text-gray-400">10次鑄造額度 + 高級功能</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 價值循環飛輪 -->
+            <div class="card p-8">
+                <h3 class="text-3xl font-bold mb-8 text-center">價值循環飛輪</h3>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-yellow-600 flex items-center justify-center mb-4">
+                            <i class="fas fa-hand-holding-usd text-white text-xl"></i>
+                        </div>
+                        <p class="text-center text-sm font-bold">激活者投資</p>
+                    </div>
+                    
+                    <div class="text-yellow-400 text-3xl font-bold">→</div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-green-600 flex items-center justify-center mb-4">
+                            <i class="fas fa-database text-white text-xl"></i>
+                        </div>
+                        <p class="text-center text-sm font-bold">地點數據豐富</p>
+                    </div>
+                    
+                    <div class="text-yellow-400 text-3xl font-bold">→</div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-blue-600 flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <p class="text-center text-sm font-bold">吸引更多探索者</p>
+                    </div>
+                    
+                    <div class="text-yellow-400 text-3xl font-bold">→</div>
+                    
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-purple-600 flex items-center justify-center mb-4">
+                            <i class="fas fa-coins text-white text-xl"></i>
+                        </div>
+                        <p class="text-center text-sm font-bold">增加鑄造收入</p>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <p class="text-gray-400">自驅動的網絡效應：更多優質地點 → 更多用戶 → 更多收入 → 更多激活投資</p>
                 </div>
             </div>
         </div>
@@ -1205,52 +1538,62 @@
     <section class="py-20 bg-gray-900" id="about">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16 animate-fade-in">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8">
                     關於
-                    <span class="gradient-text">8.rich</span>
+                    <span class="gradient-text">1234567.world</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
-                    我們致力於用科技的力量傳承文化智慧，
-                    讓古代的風水理論在現代都市中煥發新的生命力
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    我們是傳統文化與現代科技融合的先驅者，
+                    致力於用AI的力量傳承古代智慧，讓"天地人三才"理論在數字時代煥發新生命力
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div class="animate-fade-in">
-                    <h3 class="text-2xl font-bold mb-6">我們的使命</h3>
-                    <p class="text-gray-300 mb-6 leading-relaxed">
-                        8.rich項目代表了傳統文化與現代科技融合的全新探索。
-                        我們相信，通過將"天地人三才"的古老智慧與前沿AI技術相結合，
-                        能夠為現代人的生活提供真正有價值的指導和體驗。
+                    <h3 class="text-3xl font-bold mb-8">我們的使命</h3>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                        1234567.world 代表了"玄學科技"(Meta-Tech)的全新探索。
+                        我們相信，通過將古老的"天地人三才"智慧與前沿AI技術相結合，
+                        能夠為現代人創造真正有價值的個人化氣運優化體驗。
                     </p>
                     
-                    <div class="space-y-4 mb-8">
+                    <div class="space-y-6 mb-8">
                         <div class="flex items-start">
-                            <i class="fas fa-lightbulb text-yellow-400 mr-3 mt-1"></i>
+                            <i class="fas fa-brain text-yellow-400 mr-4 mt-1 text-xl"></i>
                             <div>
-                                <h4 class="font-bold mb-1">傳承文化智慧</h4>
-                                <p class="text-gray-400 text-sm">
-                                    用現代技術手段活化千年傳統文化智慧
+                                <h4 class="font-bold mb-2 text-lg">AI驅動的古代智慧</h4>
+                                <p class="text-gray-400">
+                                    用XGBoost算法將傳統風水理論數字化和算法化
                                 </p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <i class="fas fa-compass text-yellow-400 mr-3 mt-1"></i>
+                            <i class="fas fa-globe text-yellow-400 mr-4 mt-1 text-xl"></i>
                             <div>
-                                <h4 class="font-bold mb-1">指導現代生活</h4>
-                                <p class="text-gray-400 text-sm">
-                                    讓古老的智慧為現代都市人提供生活指引
+                                <h4 class="font-bold mb-2 text-lg">數字煉金術體驗</h4>
+                                <p class="text-gray-400">
+                                    創造"發現-鏈接-互動-鑄造"的完整自動化體驗
                                 </p>
                             </div>
                         </div>
                         
                         <div class="flex items-start">
-                            <i class="fas fa-users text-yellow-400 mr-3 mt-1"></i>
+                            <i class="fas fa-network-wired text-yellow-400 mr-4 mt-1 text-xl"></i>
                             <div>
-                                <h4 class="font-bold mb-1">建設和諧社會</h4>
-                                <p class="text-gray-400 text-sm">
-                                    促進人與環境的和諧，構建更美好的社會
+                                <h4 class="font-bold mb-2 text-lg">可持續生態系統</h4>
+                                <p class="text-gray-400">
+                                    建設雙邊市場經濟模型，創造長期價值
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-user-check text-yellow-400 mr-4 mt-1 text-xl"></i>
+                            <div>
+                                <h4 class="font-bold mb-2 text-lg">個人化環境校準</h4>
+                                <p class="text-gray-400">
+                                    開創個人化環境能量校準的全新產品類別
                                 </p>
                             </div>
                         </div>
@@ -1259,39 +1602,39 @@
                 
                 <div class="animate-fade-in">
                     <div class="card p-8">
-                        <h3 class="text-xl font-bold mb-6 text-center">技術優勢</h3>
+                        <h3 class="text-2xl font-bold mb-8 text-center">技術優勢</h3>
                         
                         <div class="space-y-6">
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full gradient-bg flex items-center justify-center mr-4">
-                                    <i class="fas fa-brain text-white"></i>
+                                <div class="w-12 h-12 rounded-full digital-bg flex items-center justify-center mr-4">
+                                    <i class="fas fa-microchip text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1">AI智能分析</h4>
+                                    <h4 class="font-bold mb-2">PRA個人化共鳴算法</h4>
                                     <p class="text-sm text-gray-400">
-                                        基於XGBoost算法的個性化共鳴分析系統
+                                        基於XGBoost的AI引擎，精準匹配個體與環境
                                     </p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full mystic-bg flex items-center justify-center mr-4">
-                                    <i class="fas fa-database text-white"></i>
+                                <div class="w-12 h-12 rounded-full algorithm-bg flex items-center justify-center mr-4">
+                                    <i class="fas fa-layer-group text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1">大數據支撐</h4>
+                                    <h4 class="font-bold mb-2">地理靈性數據層</h4>
                                     <p class="text-sm text-gray-400">
-                                        整合地理、氣象、歷史等多維度數據
+                                        GIS技術整合地形、水文、建築等多維數據
                                     </p>
                                 </div>
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full fortune-bg flex items-center justify-center mr-4">
+                                <div class="w-12 h-12 rounded-full blockchain-bg flex items-center justify-center mr-4">
                                     <i class="fas fa-link text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1">區塊鏈記錄</h4>
+                                    <h4 class="font-bold mb-2">區塊鏈記錄系統</h4>
                                     <p class="text-sm text-gray-400">
                                         永久存儲氣運數據，確保記錄真實可信
                                     </p>
@@ -1299,15 +1642,24 @@
                             </div>
                             
                             <div class="flex items-start">
-                                <div class="w-12 h-12 rounded-full accent-bg flex items-center justify-center mr-4">
-                                    <i class="fas fa-hand-sparkles text-orange-400"></i>
+                                <div class="w-12 h-12 rounded-full mystic-bg flex items-center justify-center mr-4">
+                                    <i class="fas fa-magic text-white"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold mb-1">多感官互動</h4>
+                                    <h4 class="font-bold mb-2">沉浸式AR體驗</h4>
                                     <p class="text-sm text-gray-400">
-                                        視聽嗅觸多重感官的沉浸式體驗
+                                        多感官AR互動，視聽嗅觸全方位體驗
                                     </p>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 p-6 bg-gradient-to-r from-purple-600 to-yellow-400 bg-opacity-20 rounded-lg border border-purple-400">
+                            <div class="text-center">
+                                <h4 class="font-bold text-purple-400 text-lg mb-2">Meta-Tech 玄學科技</h4>
+                                <p class="text-sm text-gray-300">
+                                    古代智慧與數字現實的完美交匯，個人化氣運的數字煉金術時代
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -1317,132 +1669,207 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-black">
+    <footer class="py-16 bg-black">
         <div class="container mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <a href="#" class="flex flex-col items-start mb-4">
-                        <div class="logo-font">8.rich</div>
-                        <div class="logo-sub">氣運之地探索平台</div>
+                    <a href="#" class="flex flex-col items-start mb-6">
+                        <div class="logo-font text-2xl">1234567.world</div>
+                        <div class="logo-sub">Meta-Tech Platform</div>
+                        <div class="meta-tech-badge">玄學科技</div>
                     </a>
-                    <p class="text-gray-400 mb-4">
+                    <p class="text-gray-400 mb-6">
                         用科技傳承文化智慧，
-                        讓古老的風水理論在現代都市中煥發新生。
+                        讓古老的"天地人三才"理論在數字時代煥發新生命力。
                     </p>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-weixin"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-weibo"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-yellow-400"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors"><i class="fab fa-weixin text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors"><i class="fab fa-weibo text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors"><i class="fab fa-telegram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors"><i class="fab fa-github text-xl"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">產品功能</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#locations" class="text-gray-400 hover:text-yellow-400">地點探索</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">氣運分析</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">多感官互動</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">區塊鏈記錄</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">數據鑄造</a></li>
+                    <h3 class="text-lg font-semibold mb-6">核心功能</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#discover" class="text-gray-400 hover:text-yellow-400 transition-colors">地點發現</a></li>
+                        <li><a href="#algorithm" class="text-gray-400 hover:text-yellow-400 transition-colors">PRA算法</a></li>
+                        <li><a href="#journey" class="text-gray-400 hover:text-yellow-400 transition-colors">AR互動</a></li>
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-yellow-400 transition-colors">區塊鏈記錄</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">數字煉金術</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">服務支援</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">使用指南</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">常見問題</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">技術支援</a></li>
-                        <li><a href="activator.html" class="text-gray-400 hover:text-yellow-400">地點激活</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">平台介紹</a></li>
+                    <h3 class="text-lg font-semibold mb-6">生態系統</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#ecosystem" class="text-gray-400 hover:text-yellow-400 transition-colors">成為激活者</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">探索者指南</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">社區論壇</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">開發者API</a></li>
+                        <li><a href="#map" class="text-gray-400 hover:text-yellow-400 transition-colors">氣運地圖</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">法律條款</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">服務條款</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">隱私政策</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">版權聲明</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">免責聲明</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400">投訴舉報</a></li>
+                    <h3 class="text-lg font-semibold mb-6">支援服務</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">白皮書</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">技術文檔</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">常見問題</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">投資者關係</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">聯絡我們</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-                <p>© 2025 8.rich 氣運之地探索平台. 保留所有權利.</p>
-                <p class="mt-2">香港註冊公司 | 服務覆蓋全球華人地區</p>
+                <p class="mb-2">© 2025 1234567.world Meta-Tech Platform. 保留所有權利.</p>
+                <p>古代智慧與數字現實的完美交匯 | 讓傳統智慧照亮現代人生</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Algorithm Elements -->
+    <div class="floating-element" style="top: 12%; left: 8%;">
+        PRA算法運行中...<br>
+        氣運共鳴分: ★★★★★ <br>
+        // Real-time Analysis
+    </div>
+    
+    <div class="floating-element" style="bottom: 25%; right: 10%;">
+        五行平衡分析: 92/100<br>
+        最佳時機: 即將到來<br>
+        // Meta-Tech Processing
+    </div>
+    
+    <div class="floating-element" style="top: 45%; left: 78%;">
+        XGBoost模型預測中...<br>
+        天地人三才匹配度: 95%<br>
+        // AI Fortune Engine
+    </div>
+    
+    <!-- Algorithm streams -->
+    <div class="algorithm-stream" style="left: 12%; animation-delay: 0s;"></div>
+    <div class="algorithm-stream" style="left: 28%; animation-delay: 1s;"></div>
+    <div class="algorithm-stream" style="left: 44%; animation-delay: 2s;"></div>
+    <div class="algorithm-stream" style="left: 60%; animation-delay: 3s;"></div>
+    <div class="algorithm-stream" style="left: 76%; animation-delay: 0.5s;"></div>
+    <div class="algorithm-stream" style="left: 92%; animation-delay: 1.5s;"></div>
+
     <script>
-        // Add random data streams
-        function createDataStreams() {
-            for (let i = 0; i < 5; i++) {
+        // Countdown timer functionality
+        function updateCountdown(element, targetMinutes) {
+            let totalSeconds = targetMinutes * 60;
+            
+            function tick() {
+                const hours = Math.floor(totalSeconds / 3600);
+                const minutes = Math.floor((totalSeconds % 3600) / 60);
+                const seconds = totalSeconds % 60;
+                
+                const timeString = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (element.textContent.includes('最佳時機:')) {
+                    element.textContent = `最佳時機: ${timeString}`;
+                } else {
+                    element.textContent = timeString;
+                }
+                
+                if (totalSeconds > 0) {
+                    totalSeconds--;
+                } else {
+                    totalSeconds = targetMinutes * 60; // Reset countdown
+                    // Add notification effect when countdown reaches zero
+                    element.parentElement.style.animation = 'timerAlert 1s ease-in-out';
+                    setTimeout(() => {
+                        element.parentElement.style.animation = '';
+                    }, 1000);
+                }
+            }
+            
+            tick(); // Initial call
+            setInterval(tick, 1000);
+        }
+        
+        // Create algorithm streams
+        function createAlgorithmStreams() {
+            for (let i = 0; i < 8; i++) {
                 setTimeout(() => {
                     const stream = document.createElement('div');
-                    stream.className = 'data-stream';
+                    stream.className = 'algorithm-stream';
                     stream.style.left = Math.random() * 100 + '%';
-                    stream.style.animationDelay = Math.random() * 2 + 's';
+                    stream.style.animationDelay = Math.random() * 4 + 's';
                     document.body.appendChild(stream);
                     
-                    // Remove after animation
                     setTimeout(() => {
                         stream.remove();
-                    }, 4000);
+                    }, 6000);
                 }, i * 3000);
             }
         }
         
-        // Countdown timer simulation
-        function updateCountdowns() {
-            const countdowns = document.querySelectorAll('.countdown-timer');
-            countdowns.forEach(countdown => {
-                const timeText = countdown.textContent;
-                if (timeText.includes('小時') && timeText.includes('分鐘')) {
-                    // Simulate countdown
-                    const randomMinutes = Math.floor(Math.random() * 360) + 30; // 30-390 minutes
-                    const hours = Math.floor(randomMinutes / 60);
-                    const minutes = randomMinutes % 60;
-                    countdown.innerHTML = `
-                        <i class="fas fa-clock mr-2"></i>
-                        最佳時機: ${hours}小時${minutes}分鐘後
-                    `;
-                }
+        // Update PRA scores with realistic fluctuation
+        function updatePRAScores() {
+            const scores = document.querySelectorAll('.pra-score');
+            scores.forEach(score => {
+                const currentScore = parseInt(score.textContent.match(/\d+/)[0]);
+                const variation = Math.floor(Math.random() * 6) - 3; // -3 to +3
+                const newScore = Math.max(75, Math.min(98, currentScore + variation));
+                score.textContent = `PRA: ${newScore}`;
             });
         }
         
-        // Dynamic cost calculation simulation
+        // Generate dynamic cost calculation
         function generateDynamicCost() {
-            // Generate random cost between 0.99 and 999
-            const baseCost = Math.random() * 998 + 0.99;
+            const baseCost = Math.random() * 989 + 9.9;
             return Math.round(baseCost * 100) / 100;
         }
         
-        // Initialize
+        // Animate fortune curves with wave effect
+        function animateFortuneCurves() {
+            document.querySelectorAll('.fortune-curve').forEach((curve, index) => {
+                const colors = [
+                    'linear-gradient(90deg, rgba(255, 215, 0, 0.4) 0%, rgba(0, 212, 255, 0.5) 30%, rgba(255, 215, 0, 0.7) 60%, rgba(138, 43, 226, 0.6) 80%, rgba(255, 215, 0, 0.5) 100%)',
+                    'linear-gradient(90deg, rgba(0, 212, 255, 0.3) 0%, rgba(138, 43, 226, 0.4) 25%, rgba(255, 215, 0, 0.6) 50%, rgba(0, 212, 255, 0.5) 75%, rgba(138, 43, 226, 0.4) 100%)',
+                    'linear-gradient(90deg, rgba(138, 43, 226, 0.3) 0%, rgba(255, 215, 0, 0.5) 20%, rgba(0, 212, 255, 0.4) 40%, rgba(255, 215, 0, 0.7) 70%, rgba(138, 43, 226, 0.5) 100%)'
+                ];
+                
+                curve.style.background = colors[Math.floor(Math.random() * colors.length)];
+            });
+        }
+        
+        // Initialize page functionality
         document.addEventListener('DOMContentLoaded', function() {
-            // Start data streams
-            createDataStreams();
-            setInterval(createDataStreams, 15000);
+            // Initialize countdown timers
+            document.querySelectorAll('.countdown').forEach(countdown => {
+                const targetMinutes = parseInt(countdown.getAttribute('data-target'));
+                updateCountdown(countdown, targetMinutes);
+            });
             
-            // Update countdowns
-            updateCountdowns();
-            setInterval(updateCountdowns, 60000); // Update every minute
+            // Start algorithm streams
+            createAlgorithmStreams();
+            setInterval(createAlgorithmStreams, 25000);
             
-            // Add scroll animations
+            // Update PRA scores periodically
+            updatePRAScores();
+            setInterval(updatePRAScores, 60000); // Every minute
+            
+            // Animate fortune curves
+            animateFortuneCurves();
+            setInterval(animateFortuneCurves, 12000); // Every 12 seconds
+            
+            // Scroll animations
             const animatedElements = document.querySelectorAll('.animate-fade-in');
             
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'scale(1)';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
                     }
                 });
             }, { threshold: 0.1 });
             
             animatedElements.forEach(el => {
                 el.style.opacity = '0';
-                el.style.transform = 'scale(0.95)';
+                el.style.transform = 'translateY(40px) scale(0.95)';
                 observer.observe(el);
             });
             
@@ -1451,15 +1878,25 @@
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileMenuClose = document.querySelector('.mobile-menu-close');
             
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.add('open');
-                document.body.style.overflow = 'hidden';
-            });
-            
-            mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-                document.body.style.overflow = 'auto';
-            });
+            if (mobileMenuBtn && mobileMenu && mobileMenuClose) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                mobileMenuClose.addEventListener('click', () => {
+                    mobileMenu.classList.remove('open');
+                    document.body.style.overflow = 'auto';
+                });
+                
+                // Close menu when clicking on links
+                document.querySelectorAll('.mobile-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('open');
+                        document.body.style.overflow = 'auto';
+                    });
+                });
+            }
             
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1471,117 +1908,98 @@
                             behavior: 'smooth',
                             block: 'start'
                         });
-                        // Close mobile menu if open
-                        mobileMenu.classList.remove('open');
-                        document.body.style.overflow = 'auto';
+                        if (mobileMenu) {
+                            mobileMenu.classList.remove('open');
+                            document.body.style.overflow = 'auto';
+                        }
                     }
                 });
             });
             
-            // Location card interactions
+            // Enhanced location card interactions
             document.querySelectorAll('.location-card').forEach(card => {
                 card.addEventListener('click', function(e) {
                     if (!e.target.closest('button')) {
                         const locationName = this.querySelector('h3').textContent;
-                        alert(`正在加載 ${locationName} 的詳細資訊...`);
+                        const praScore = this.querySelector('.pra-score').textContent;
+                        const interactionType = this.querySelector('.interaction-type').textContent;
+                        const countdown = this.querySelector('.countdown').textContent;
+                        
+                        alert(`🌟 ${locationName} 詳細分析\n\n${praScore}\n互動類型：${interactionType}\n${countdown}\n\n點擊「開始鑄造」按鈕開始Meta-Tech體驗！`);
                     }
                 });
             });
             
-            // Button interactions
+            // Enhanced button interactions
             document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
                 btn.addEventListener('click', function(e) {
                     if (!this.closest('form') && !this.getAttribute('href')) {
                         e.preventDefault();
                         const text = this.textContent.trim();
                         
-                        if (text.includes('開始互動')) {
+                        if (text.includes('開始鑄造')) {
                             const card = this.closest('.location-card');
                             const locationName = card.querySelector('h3').textContent;
                             const interactionType = card.querySelector('.interaction-type').textContent;
+                            const praScore = card.querySelector('.pra-score').textContent.match(/\d+/)[0];
+                            const countdown = card.querySelector('.countdown').textContent;
                             
-                            // Simulate arrival at location and interaction
-                            if (confirm(`您已到達 ${locationName}，準備進行 ${interactionType} 互動體驗？`)) {
-                                // Simulate interaction process
+                            if (confirm(`🚀 準備在 ${locationName} 進行數字煉金術體驗？\n\nPRA算法匹配度：${praScore}%\n互動類型：${interactionType}\n${countdown}\n\n點擊「確定」開始 Meta-Tech 體驗`)) {
+                                alert(`🔮 正在啟動AR引擎...\n地點：${locationName}\n互動模式：${interactionType}\n\n🎯 請根據AR指引完成相應的感應互動。\n⚡ XGBoost算法正在實時計算您的氣運共鳴數據...`);
+                                
                                 setTimeout(() => {
                                     const cost = generateDynamicCost();
-                                    const shouldRecord = confirm(`互動完成！\n\n是否將此次氣運數據永久記錄在區塊鏈上？\n費用：HK${cost}\n\n點擊「確定」記錄並付費，點擊「取消」免費結束體驗。`);
+                                    const resonanceScore = Math.floor(Math.random() * 25) + 75;
+                                    const completionRate = Math.floor(Math.random() * 15) + 85;
+                                    
+                                    const shouldRecord = confirm(`🎉 數字煉金術體驗完成！\n\n✨ 您的氣運共鳴數據已生成：\n• 地點能量匹配度：${praScore}%\n• 互動完成度：${completionRate}%\n• 個人化共鳴分：${resonanceScore}\n• 五行能量平衡：${Math.floor(Math.random() * 20) + 80}%\n\n🔗 是否將此次氣運數據永久記錄在區塊鏈上？\n💰 鑄造費用：¥${cost}\n\n點擊「確定」進行區塊鏈記錄，點擊「取消」免費結束體驗。`);
                                     
                                     if (shouldRecord) {
-                                        alert(`正在處理區塊鏈記錄...\n費用：HK${cost}\n\n記錄成功！您的氣運數據已永久存儲。`);
+                                        alert(`⛓️ 正在進行區塊鏈記錄...\n💰 費用：¥${cost}\n🔒 生成唯一數字簽名...\n\n✅ 記錄成功！您的數字氣運資產已永久存儲。\n🏆 獲得專屬氣運徽章和個人化能量簽名！\n📊 可在個人中心查看完整氣運檔案。`);
                                     } else {
-                                        alert('體驗完成！感謝您的使用，本次未產生任何費用。');
+                                        alert('🌟 Meta-Tech體驗完成！\n💫 感謝您的使用，本次未產生任何費用。\n📱 您的體驗數據已保存在本地。\n🔄 歡迎隨時再次探索氣運之旅！');
                                     }
-                                }, 2000);
-                                
-                                // Show interaction simulation
-                                alert(`正在進行 ${interactionType} 互動...\n請根據提示完成相應動作。`);
+                                }, 4000);
                             }
-                        } else if (text.includes('開始探索') || text.includes('探索附近')) {
-                            alert('正在定位您的位置，即將顯示附近的氣運地點...');
-                        } else if (text.includes('氣運地圖') || text.includes('查看地圖') || text.includes('啟動地圖')) {
-                            alert('正在加載互動地圖...');
-                        } else if (text.includes('登入')) {
-                            alert('正在跳轉到登入頁面...');
+                        } else if (text.includes('開始氣運探索') || text.includes('開始探索')) {
+                            alert('🌍 正在啟動PRA個人化共鳴算法...\n📍 定位您的位置，掃描附近的氣運地點...\n🤖 AI正在分析您的八字特徵與環境匹配度...\n⚡ XGBoost模型計算中...\n\n🗺️ 即將為您展示個人化氣運地圖！');
+                        } else if (text.includes('體驗PRA算法')) {
+                            alert('🧠 PRA算法體驗模式啟動！\n\n📝 請輸入您的出生時間，我們將為您生成：\n• 個人八字能量分析\n• 五行平衡報告\n• 最佳地點推薦\n• 實時氣運預測\n• 天地人三才匹配度\n\n🚀 正在跳轉到算法體驗頁面...');
+                        } else if (text.includes('啟動地圖')) {
+                            alert('🗺️ 正在載入地理靈性數據層(Geo-Spatial Data Layer)...\n📊 整合GIS地形、水文、建築數據...\n⭐ 生成個人化氣運熱力圖...\n🌈 渲染五行能量分佈...\n\n✨ 智能氣運地圖即將呈現！');
+                        } else if (text.includes('激活地點') || text.includes('成為激活者')) {
+                            alert('🚀 歡迎成為地點激活者！\n\n💼 您可以：\n• 認領並激活新地點\n• 獲得50%鑄造收入分成\n• 參與生態系統建設\n• 提供地點專屬內容\n\n💰 激活費用：¥999-¥9999\n📈 預期月收益：¥500-¥50000\n\n🔗 正在跳轉到激活者平台...');
+                        } else if (text.includes('登入') || text.includes('探索者')) {
+                            alert('👤 探索者登入系統\n\n🎯 功能包括：\n• 查看個人氣運檔案\n• 管理數字氣運資產\n• 訪問高級算法功能\n• 社群交流分享\n• VIP地點優先體驗\n\n🔐 正在跳轉到用戶中心...');
+                        } else if (text.includes('查看完整')) {
+                            alert('🗺️ 正在載入完整氣運地圖...\n\n🌐 包含功能：\n• 實時氣運熱力圖\n• 個人化推薦算法\n• 地點詳細分析\n• 最佳時機預測\n• AR導航功能\n\n✨ 準備進入沉浸式地圖體驗！');
                         } else {
-                            alert('功能開發中，敬請期待...');
+                            alert('🔮 Meta-Tech功能開發中，敬請期待...\n\n🚀 1234567.world 持續升級中：\n• 更多AI算法優化\n• 新增AR互動模式\n• 擴展地點類型\n• 國際化部署\n\n💫 更多玄學科技體驗即將推出！');
                         }
                     }
                 });
             });
             
-            // Location type filter
-            document.querySelectorAll('.location-element').forEach(element => {
-                element.addEventListener('click', function() {
-                    // Remove active class from all
-                    document.querySelectorAll('.location-element').forEach(el => {
-                        el.style.opacity = '0.6';
-                    });
-                    // Add active to clicked
-                    this.style.opacity = '1';
-                    
-                    const type = this.textContent;
-                    alert(`正在篩選 ${type} 類型的地點...`);
-                    
-                    // Reset after 2 seconds
-                    setTimeout(() => {
-                        document.querySelectorAll('.location-element').forEach(el => {
-                            el.style.opacity = '1';
-                        });
-                    }, 2000);
-                });
-            });
-            
-            // Fortune chart animation
-            function animateFortuneCharts() {
-                document.querySelectorAll('.fortune-chart').forEach(chart => {
-                    chart.style.background = `linear-gradient(90deg, 
-                        rgba(212, 175, 55, ${0.2 + Math.random() * 0.3}) 0%, 
-                        rgba(255, 107, 53, ${0.3 + Math.random() * 0.3}) 30%, 
-                        rgba(212, 175, 55, ${0.4 + Math.random() * 0.3}) 60%, 
-                        rgba(255, 107, 53, ${0.3 + Math.random() * 0.3}) 100%)`;
-                });
-            }
-            
-            // Animate fortune charts periodically
-            setInterval(animateFortuneCharts, 3000);
-            
-            // Data grid hover effects
-            document.querySelectorAll('.data-item').forEach(item => {
+            // Matrix item enhanced hover effects
+            document.querySelectorAll('.matrix-item').forEach(item => {
                 item.addEventListener('mouseenter', function() {
-                    this.style.borderColor = 'var(--primary)';
-                    this.style.backgroundColor = 'rgba(212, 175, 55, 0.1)';
+                    this.style.borderColor = 'var(--digital-gold)';
+                    this.style.backgroundColor = 'rgba(255, 215, 0, 0.15)';
+                    this.style.transform = 'scale(1.08)';
+                    this.style.boxShadow = '0 8px 25px rgba(255, 215, 0, 0.3)';
                 });
                 
                 item.addEventListener('mouseleave', function() {
-                    this.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                    this.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+                    this.style.borderColor = 'rgba(255, 215, 0, 0.3)';
+                    this.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+                    this.style.transform = 'scale(1)';
+                    this.style.boxShadow = 'none';
                 });
             });
             
-            // Add ripple effect to buttons
-            document.querySelectorAll('.btn-primary, .btn-secondary').forEach(button => {
-                button.addEventListener('click', function(e) {
+            // Enhanced ripple effect for buttons
+            document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+                btn.addEventListener('click', function(e) {
                     const ripple = document.createElement('span');
                     const rect = this.getBoundingClientRect();
                     const size = Math.max(rect.width, rect.height);
@@ -1594,11 +2012,12 @@
                         height: ${size}px;
                         left: ${x}px;
                         top: ${y}px;
-                        background: rgba(255, 255, 255, 0.3);
+                        background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 70%);
                         border-radius: 50%;
                         transform: scale(0);
-                        animation: ripple 0.6s ease-out;
+                        animation: megaRipple 1s ease-out;
                         pointer-events: none;
+                        z-index: 10;
                     `;
                     
                     this.style.position = 'relative';
@@ -1607,38 +2026,103 @@
                     
                     setTimeout(() => {
                         ripple.remove();
-                    }, 600);
+                    }, 1000);
                 });
             });
             
-            // Add ripple animation
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes ripple {
-                    to {
-                        transform: scale(2);
-                        opacity: 0;
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-            
-            // Dynamic data updates
-            function updateDataValues() {
-                document.querySelectorAll('.data-value').forEach(value => {
+            // Dynamic data updates for matrix values
+            function updateMatrixValues() {
+                document.querySelectorAll('.matrix-value').forEach(value => {
                     const originalText = value.textContent;
-                    if (!isNaN(originalText)) {
-                        // For numeric values, add slight variation
+                    if (!isNaN(originalText) && originalText !== '') {
                         const num = parseInt(originalText);
-                        const variation = Math.floor(Math.random() * 3) - 1; // -1, 0, or 1
-                        value.textContent = Math.max(0, Math.min(100, num + variation));
+                        const variation = Math.floor(Math.random() * 5) - 2; // -2 to +2
+                        const newValue = Math.max(70, Math.min(99, num + variation));
+                        value.textContent = newValue;
                     }
                 });
             }
             
-            // Update data values periodically to simulate real-time changes
-            setInterval(updateDataValues, 30000); // Every 30 seconds
+            // Update matrix values periodically
+            setInterval(updateMatrixValues, 90000); // Every 1.5 minutes
+            
+            // Floating elements enhanced animation
+            document.querySelectorAll('.floating-element').forEach((el, index) => {
+                el.style.animationDelay = `${index * 2.5}s`;
+                
+                // Add random movement
+                setInterval(() => {
+                    const randomX = (Math.random() - 0.5) * 20;
+                    const randomY = (Math.random() - 0.5) * 20;
+                    el.style.transform = `translateX(${randomX}px) translateY(${randomY}px)`;
+                }, 8000 + index * 1000);
+            });
+            
+            // Enhanced hover animations for all interactive elements
+            document.querySelectorAll('.card, .stats-card, .location-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+                });
+            });
+            
+            // Parallax effect for hero background
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroBackground = document.querySelector('.hero-bg');
+                if (heroBackground) {
+                    heroBackground.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
         });
+        
+        // Add enhanced CSS animations
+        const enhancedStyles = document.createElement('style');
+        enhancedStyles.textContent = `
+            @keyframes megaRipple {
+                to {
+                    transform: scale(2.5);
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes timerAlert {
+                0%, 100% { transform: scale(1); }
+                50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+            }
+            
+            @keyframes dataflow {
+                0% { opacity: 0; transform: translateY(-10px) scale(0.8); }
+                50% { opacity: 1; transform: translateY(0) scale(1); }
+                100% { opacity: 0; transform: translateY(10px) scale(0.8); }
+            }
+            
+            @keyframes energyPulse {
+                0%, 100% { 
+                    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+                    border-color: rgba(255, 215, 0, 0.3);
+                }
+                50% { 
+                    box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+                    border-color: rgba(255, 215, 0, 0.8);
+                }
+            }
+            
+            .matrix-item,
+            .card,
+            .location-card,
+            .stats-card {
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+            
+            .fortune-curve {
+                animation: energyPulse 4s ease-in-out infinite;
+            }
+            
+            .location-card:hover .fortune-curve {
+                animation: energyPulse 2s ease-in-out infinite;
+            }
+        `;
+        document.head.appendChild(enhancedStyles);
     </script>
 </body>
 </html>
